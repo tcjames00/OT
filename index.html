@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OnTrial Services & Pricing</title>
     <style>
+        /* General Body and Container Styles */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
@@ -21,6 +22,8 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        
+        /* Heading Styles */
         h1, h2, h3, h4 {
             color: #144c3f;
             line-height: 1.2;
@@ -43,6 +46,8 @@
             color: #062d25;
             margin-top: 40px;
         }
+        
+        /* Logo and Section Styles */
         .logo {
             display: block;
             margin: 0 auto 20px auto;
@@ -60,6 +65,8 @@
             font-size: 1.1em;
             margin-bottom: 20px;
         }
+        
+        /* Interactive Menu Styles */
         .menu-container {
             background-color: #f6f6f5;
             padding: 20px;
@@ -88,15 +95,18 @@
             border-radius: 5px;
             font-weight: bold;
             transition: background-color 0.3s;
+            cursor: pointer;
         }
         .interactive-menu li a:hover {
             background-color: #062d25;
         }
+        
+        /* Table Styles */
         .quick-ref-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            table-layout: fixed; /* Helps enforce column widths */
+            table-layout: fixed;
         }
         .quick-ref-table th, .quick-ref-table td {
             padding: 12px;
@@ -110,24 +120,17 @@
             font-size: 1.2em;
             color: #144c3f;
         }
-        .quick-ref-table td:first-child {
-            width: 55%; /* Adjusted width for the first column */
-        }
-        .quick-ref-table td:nth-child(2) {
-            width: 25%;
-        }
-        .quick-ref-table td:nth-child(3) {
-            width: 20%;
-            text-align: right;
-        }
+        .quick-ref-table td:first-child { width: 55%; }
+        .quick-ref-table td:nth-child(2) { width: 25%; }
+        .quick-ref-table td:nth-child(3) { width: 20%; text-align: right; }
         .quick-ref-table td a {
             font-weight: bold;
             color: #144c3f;
             text-decoration: none;
         }
-        .quick-ref-table td a:hover {
-            text-decoration: underline;
-        }
+        .quick-ref-table td a:hover { text-decoration: underline; }
+        
+        /* Service and Pricing Block Styles */
         .service-block {
             padding-top: 20px;
             margin-top: 20px;
@@ -139,22 +142,11 @@
             gap: 20px;
             margin-bottom: 20px;
         }
-        .service-description-item img {
-            max-width: 40px;
-            margin-top: 5px;
-        }
-        .service-description-item p {
-            margin: 0;
-        }
-        strong {
-            color: #062d25;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
+        .service-description-item p { margin: 0; }
+        strong { color: #062d25; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        
         .pricing-table {
             width: 100%;
             margin-top: 20px;
@@ -170,6 +162,8 @@
             background-color: #f6f6f5;
             width: 30%;
         }
+        
+        /* Info Boxes and Notes */
         .note {
             background-color: #fffbe6;
             border-left: 4px solid #e0b744;
@@ -185,12 +179,10 @@
             margin: 25px 0;
             border-radius: 8px;
         }
-        .info-box p {
-            margin-bottom: 10px;
-        }
-        .info-box p:last-child {
-            margin-bottom: 0;
-        }
+        .info-box p { margin-bottom: 10px; }
+        .info-box p:last-child { margin-bottom: 0; }
+        
+        /* Disclaimer and Sample Report Link Styles */
         .disclaimer-section {
             background-color: #f6f6f5;
             padding: 20px;
@@ -211,8 +203,14 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-        .sample-report-link a:hover {
-            background-color: #d4ac3a;
+        .sample-report-link a:hover { background-color: #d4ac3a; }
+
+        /* Styles for section visibility toggle */
+        .service-section {
+            display: none;
+        }
+        .service-section.active {
+            display: block;
         }
     </style>
 </head>
@@ -249,7 +247,7 @@
         </ul>
     </div>
     
-    <section id="quick-reference">
+    <section id="quick-reference" class="service-section">
         <h2>Quick-Reference Pricing</h2>
         <table class="quick-ref-table">
             <thead>
@@ -360,7 +358,7 @@
         </table>
     </section>
 
-    <section id="background-social">
+    <section id="background-social" class="service-section">
         <h2>Background & Social Media Reports</h2>
         <p class="section-intro">This suite of services is engineered to deliver a decisive intelligence advantage not available in traditional online “background check” services. Built for litigation, GRC, and protective intelligence, our process goes far beyond simple database searches to provide comprehensive, analyst-vetted reports that detail a subject’s real history. Our process combines multi-point proprietary data access via AI using CLOSINT (Closed Intelligence Sources), advanced technology that extracts that data from the sources, de-conflicts it, and eliminates duplicates, and then proceeds to an OSINT (Open Source Intelligence) examination to ensure that no stone is left unturned.critical oversight of human experts to deliver intelligence you can act on with confidence.</p>
 
@@ -464,7 +462,7 @@
         </div>
     </section>
 
-    <section id="asset-intelligence">
+    <section id="asset-intelligence" class="service-section">
         <h2>Financial & Asset Intelligence</h2>
         <p class="section-intro">These services are designed to discreetly uncover a subject's complete financial profile. From locating traditional bank accounts and property to identifying modern digital assets, our intelligence provides the clarity needed to inform settlements, enforce judgments, and execute sound legal strategy.</p>
         <div class="note">*Note: A subject's Social Security Number (SSN) or Employer Identification Number (EIN) is required for all asset searches. An SSN/EIN Locate can be added to your order for $75 if needed.</div>
@@ -528,7 +526,7 @@
         </div>
     </section>
 
-    <section id="due-diligence">
+    <section id="due-diligence" class="service-section">
         <h2>Due Diligence</h2>
         <p class="section-intro">Actionable intelligence to help you invest with confidence and manage risk. In today's high-stakes investment landscape, uncertainty is a liability. Our Due Diligence services are designed to provide a clear, comprehensive, and timely intelligence picture of potential investments and partnerships. We identify critical red flags—from financial and legal liabilities to reputational risks—allowing you to move forward with clarity and confidence.</p>
         
@@ -549,7 +547,7 @@
         </div>
     </section>
 
-    <section id="geolocation-intelligence">
+    <section id="geolocation-intelligence" class="service-section">
         <h2>Geolocation Intelligence</h2>
         <p class="section-intro">Advanced location analysis to reveal patterns of life and critical insights. Understanding a subject's pattern of life is often the key to unlocking a case. Our Geolocation Intelligence services transform raw location data into a clear, actionable narrative. We identify routines, reveal previously unknown associations, and flag critical anomalies that provide strategic leverage in time-sensitive matters.</p>
         
@@ -569,7 +567,7 @@
         </div>
     </section>
 
-    <section id="surveillance-field">
+    <section id="surveillance-field" class="service-section">
         <h2>Surveillance & Field Investigations</h2>
         <p class="section-intro">"The firm you call when you need to win." For critical cases that require on-the-ground evidence, our Surveillance & Field Investigations division provides undeniable proof. Our agents are masters of discretion and evidence gathering, ensuring you have the clear, factual intelligence needed to prevail in court or at the negotiating table.</p>
         
@@ -586,7 +584,7 @@
         </div>
     </section>
 
-    <section id="other-services">
+    <section id="other-services" class="service-section">
         <h2>Other Services & Special Projects</h2>
         
         <div id="investigative-research" class="service-block">
@@ -615,6 +613,33 @@
     </section>
     
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuLinks = document.querySelectorAll('.interactive-menu a');
+        const sections = document.querySelectorAll('.service-section');
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Stop the default jump-to-anchor behavior
+
+                // Hide all other sections first
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // Get the ID of the target section from the link's href
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+
+                // If the target section exists, show it
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
