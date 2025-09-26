@@ -48,18 +48,6 @@
             margin: 0 auto 20px auto;
             max-width: 250px;
         }
-        .intro-section p {
-            font-size: 1.1em;
-            margin-bottom: 15px;
-        }
-        .intro-section h4 {
-            font-size: 1.3em;
-            margin-top: 25px;
-        }
-        .section-intro {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
         .menu-container {
             background-color: #f6f6f5;
             padding: 20px;
@@ -79,7 +67,7 @@
             justify-content: center;
             gap: 15px;
         }
-        .interactive-menu li a {
+        .interactive-menu li button {
             display: block;
             padding: 10px 15px;
             background-color: #144c3f;
@@ -88,15 +76,24 @@
             border-radius: 5px;
             font-weight: bold;
             transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
         }
-        .interactive-menu li a:hover {
+        .interactive-menu li button:hover, .interactive-menu li button.active {
             background-color: #062d25;
+        }
+        .service-section {
+            display: none; /* Hide all sections by default */
+        }
+        .service-section.active {
+            display: block; /* Show the active section */
         }
         .quick-ref-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            table-layout: fixed; 
+            table-layout: fixed;
         }
         .quick-ref-table th, .quick-ref-table td {
             padding: 12px;
@@ -110,76 +107,106 @@
             font-size: 1.2em;
             color: #144c3f;
         }
-        .quick-ref-table td:first-child {
-            width: 55%; 
-        }
-        .quick-ref-table td:nth-child(2) {
-            width: 25%;
-        }
-        .quick-ref-table td:nth-child(3) {
-            width: 20%;
-            text-align: right;
-        }
-        .quick-ref-table td a {
-            font-weight: bold;
-            color: #144c3f;
-            text-decoration: none;
-        }
-        .quick-ref-table td a:hover {
-            text-decoration: underline;
-        }
-        .service-block {
-            padding-top: 20px;
-            margin-top: 20px;
-            border-top: 1px solid #eae9e8;
-        }
-        strong {
-            color: #062d25;
-        }
-        .note {
-            background-color: #fffbe6;
-            border-left: 4px solid #e0b744;
-            padding: 15px;
-            margin: 20px 0;
-            font-style: italic;
-        }
+        .quick-ref-table td:first-child { width: 55%; }
+        .quick-ref-table td:nth-child(2) { width: 25%; }
+        .quick-ref-table td:nth-child(3) { width: 20%; text-align: right; }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="https://images.squarespace-cdn.com/content/v1/661804ae90f9d93fb7aa0d9e/b877b19b-d15f-4b7d-82be-0361e7008958/OT+Logo+Green+Gold+White+500x250.png" alt="OnTrial Logo" class="logo">
         <h1>Services & Pricing</h1>
+
         <div class="menu-container">
             <h3>Services</h3>
             <ul class="interactive-menu">
-                <li><a href="#quick-reference">Quick-Reference Pricing</a></li>
-                <li><a href="#background-social">Background & Social Media Intelligence</a></li>
-                <li><a href="#asset-intelligence">Asset Intelligence</a></li>
-                <li><a href="#due-diligence">Due Diligence</a></li>
+                <li><button onclick="showSection('quick-reference')" class="menu-button active">Quick-Reference Pricing</button></li>
+                <li><button onclick="showSection('background-social')" class="menu-button">Background & Social Media</button></li>
+                <li><button onclick="showSection('asset-intelligence')" class="menu-button">Asset Intelligence</button></li>
+                <li><button onclick="showSection('due-diligence')" class="menu-button">Due Diligence</button></li>
             </ul>
         </div>
-        <section id="quick-reference">
+
+        <section id="quick-reference" class="service-section active">
             <h2>Quick-Reference Pricing</h2>
             <table class="quick-ref-table">
                 <thead>
-                    <tr>
-                        <th colspan="3">Background & Social Media</th>
-                    </tr>
+                    <tr><th colspan="3">Background & Social Media</th></tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="#background-360">Background 360</a> (Background Plus + DeepMedia Social Media Report)</td>
+                        <td><strong>Background 360</strong> (Background Plus + DeepMedia Social Media Report)</td>
                         <td>Standard: 5-7 Business Days<br>RUSH: 2-3 Business Days</td>
                         <td>$1,450.00<br>$1,850.00</td>
                     </tr>
-                     <tr>
-                        <td><a href="#trial-360">Trial 360</a> (Background 360 + DeepMedia + Flash Geolocation + Case Analysis)</td>
+                    <tr>
+                        <td><strong>Trial 360</strong> (Background 360 + DeepMedia + Flash Geolocation + Case Analysis)</td>
                         <td>Standard: 7-10 Business Days<br>RUSH: 3-5 Business Days</td>
                         <td>$1,495.00<br>$1,995.00</td>
                     </tr>
                 </tbody>
+                 <thead>
+                    <tr><th colspan="3">Asset Intelligence</th></tr>
+                </thead>
+                 <tbody>
+                    <tr>
+                        <td><strong>National Domestic (US) Asset Search</strong> (Includes Bank/Investment Accounts)</td>
+                        <td>Standard: 7-10 Business Days<br>RUSH: 3-5 Business Days</td>
+                        <td>$950.00<br>$1,250.00</td>
+                    </tr>
+                </tbody>
+                 <thead>
+                    <tr><th colspan="3">Due Diligence</th></tr>
+                </thead>
+                 <tbody>
+                     <tr>
+                        <td><strong>Level 1 Due Diligence</strong> - Up to 3 Principals + 1 Entity</td>
+                        <td>Standard: 3-5 Business Days (Avg)</td>
+                        <td>$1,250.00</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
+
+        <section id="background-social" class="service-section">
+            <h2>Background & Social Media Intelligence</h2>
+            <p>This suite of services is engineered to deliver a decisive intelligence advantage. We provide comprehensive, analyst-vetted reports that detail a subject’s real history.</p>
+            </section>
+
+        <section id="asset-intelligence" class="service-section">
+            <h2>Asset Intelligence</h2>
+            <p>These services are designed to discreetly uncover a subject's complete financial profile, from traditional bank accounts to digital assets.</p>
+            </section>
+        
+        <section id="due-diligence" class="service-section">
+            <h2>Due Diligence</h2>
+            <p>Actionable intelligence to help you invest with confidence and manage risk. We identify critical red flags—from financial and legal liabilities to reputational risks.</p>
+            </section>
+
     </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all service sections
+            document.querySelectorAll('.service-section').forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            // Deactivate all menu buttons
+            document.querySelectorAll('.menu-button').forEach(function(button) {
+                button.classList.remove('active');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Activate the clicked button
+            const activeButton = document.querySelector(`.menu-button[onclick="showSection('${sectionId}')"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+        }
+    </script>
+
 </body>
 </html>
