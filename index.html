@@ -74,10 +74,8 @@
             margin: 30px 0;
             border: 1px solid #eae9e8;
         }
-        .menu-container h3 {
-            margin-top: 0;
-            text-align: center;
-        }
+        /* H3 removed from here as requested */
+        
         .interactive-menu {
             list-style-type: none;
             padding: 0;
@@ -85,6 +83,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
+            margin: 0; /* Removed default margin since H3 is gone */
         }
         .interactive-menu li a {
             display: block;
@@ -211,6 +210,11 @@
         }
         .service-section.active {
             display: block;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -221,7 +225,6 @@
     <h1>Services & Pricing</h1>
 
     <div class="menu-container">
-        <h3>Services</h3>
         <ul class="interactive-menu">
             <li><a href="#quick-reference">Quick-Reference Pricing</a></li>
             <li><a href="#background-social">Background & Social Media Intelligence</a></li>
@@ -247,7 +250,7 @@
         <p><strong>Have a special request or don’t see what you’re looking for?</strong> - Book a consultation with us in the portal or use the “Other Investigative Services &gt; Investigative Research” option to start a case so that we can create an accurate scope and quote for what you need.</p>
     </div>
     
-    <section id="quick-reference" class="service-section">
+    <section id="quick-reference" class="service-section active">
         <h2>Quick-Reference Pricing</h2>
         <table class="quick-ref-table">
             <thead>
@@ -632,9 +635,10 @@
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
 
-                // If the target section exists, show it
+                // If the target section exists, show it and scroll to it
                 if (targetSection) {
                     targetSection.classList.add('active');
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
